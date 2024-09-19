@@ -3,17 +3,17 @@ import MyButton from "../myButton/MyButton";
 import './feedback.css'
 
 function Feedback() {
-  const [like, setLike] = useState(5);
-  const [dislike, setDislike] = useState(0);
+  const [like, setLike] = useState<number>(5);
+  const [dislike, setDislike] = useState<number>(0);
 
-  const handleLike = () => {
+  const handleLike = ():void => {
     setLike(prev => prev + 1)
   }
-  const handleDislike = () => {
+  const handleDislike = ():void => {
     setDislike(prev => prev + 1)
   }
 
-  const handleReset = () => {
+  const handleReset = ():void => {
     setLike(0)
     setDislike(0)
   }
