@@ -5,12 +5,12 @@ import './myForm.css'
 function MyForm() {
 
 
-  
+
   return (
     <form className='myForm'>
-      <MyInput label={'login'} placeholder={'login'} type={'text'} />
-      <MyInput label={'pass'} placeholder={'password'} type={'password'} />
-      <MyInput label={'email'} placeholder={'email'} type={'email'} />
+      <MyInput name='login' label={'login'} placeholder={'login'} type={'text'} />
+      <MyInput name='password' label={'pass'} placeholder={'password'} type={'password'} />
+      <MyInput name='email' label={'email'} placeholder={'email'} type={'email'} />
       <MyButton text={'авторизация'} type='submit' onClick={() => console.log('login!!')}  />
     </form>
   );

@@ -1,6 +1,11 @@
+interface IInputProps {
+  label: string
+  placeholder: string
+  type: 'email' | 'password' | 'text'
+  name: string
+}
 
-
-function MyInput({ label, placeholder, type, name }) {
+function MyInput({ label, placeholder, type, name }: IInputProps) {
   return (
     <>
       {/* сопроводительный текст из label */}
