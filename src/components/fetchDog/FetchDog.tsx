@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import MyButton from '../myButton/MyButton';
-import './fetchDog.css';
+import styles from './fetchDog.module.css';
 
 export default function FetchDog() {
 
@@ -40,7 +40,7 @@ export default function FetchDog() {
       {/* кнопка будет появляться только после пришедшей картинки */}
       {dog.message && (
         <>
-          <img className='dog-img' src={dog.message} alt="dog" />
+          <img className={styles.dogImg} src={dog.message} alt="dog" />
           <MyButton isPrimary={true} text='update dog' onClick={fetchDog} />
         </>
       )}
