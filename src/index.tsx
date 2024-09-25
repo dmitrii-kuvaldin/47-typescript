@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Lesson09 from './lessons/lesson_09/Lesson09';
+import Layout from './layout/Layout';
 
 
 const root = ReactDOM.createRoot(
@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <Lesson09 />
+    <Layout />
   </>
 );
 
