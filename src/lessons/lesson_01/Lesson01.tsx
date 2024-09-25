@@ -1,5 +1,5 @@
 // импорт css из отдельного файла
-import jsxImg from "../assets/jsx.jpg";
+import jsxImg from "../../assets/jsx.jpg";
 import MyButton from "../../components/myButton/MyButton";
 import "./lesson01.css";
 

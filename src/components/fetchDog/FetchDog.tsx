@@ -37,11 +37,13 @@ export default function FetchDog() {
 
   return (
     <div className='lesson-container'>
+      <h3>Dog API</h3>
+
       {/* кнопка будет появляться только после пришедшей картинки */}
       {dog.message && (
         <>
+          <MyButton isPrimary={true} text='update dog bellow' onClick={fetchDog} />
           <img className={styles.dogImg} src={dog.message} alt="dog" />
-          <MyButton isPrimary={true} text='update dog' onClick={fetchDog} />
         </>
       )}
     </div>
