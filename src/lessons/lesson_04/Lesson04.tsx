@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./lesson04.css";
 
-console.log(1000)
+
 function Lesson04() {
   // let count1 = 0;
 
@@ -14,8 +14,6 @@ function Lesson04() {
   // получаем в ответе массив из двух элементов - переменной состояния и функции для е изменения
 
   const [count, setCount] = useState(0);
-
-  console.log(count);
 
   const handleMinus = () => {
     setCount(prev => prev - 10)

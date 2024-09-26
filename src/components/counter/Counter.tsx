@@ -9,8 +9,6 @@ export default function Counter() {
   // вызываем хук из react-router-dom и кладем в переменную
   const navigate = useNavigate()
 
-  console.log(count);
-
   const handleMinus = (): void => {
     setCount(prev => prev - 10);
   };

@@ -1,0 +1,41 @@
+.loginForm {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm > input {
+  margin-bottom: 3px;
+}
+
+.loginForm > button {
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(241, 195, 255);
+}
+
+.usersList  p {
+  margin: 5px 8px 5px 0px;
+  margin-right: 8px;
+}
+
+.usersList button {
+  border: none;
+  background-color: rgb(178, 221, 253);
+  border-radius: 5px;
+}
+
+.usersList button:hover {
+  background-color: rgb(0, 91, 210);
+  color: white;
+}
+
+.usersList > div {
+  display: flex;
+  align-items: center;
+}
+
+.usersList span {
+  font-weight: bold;
+}

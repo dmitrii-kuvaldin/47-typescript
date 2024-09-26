@@ -3,7 +3,7 @@
 const Lesson10 = () => {
 return (
 <div className='lesson-container'>
-
+  <h2>Самостоятельная работа</h2>
 </div>
 )
 }
