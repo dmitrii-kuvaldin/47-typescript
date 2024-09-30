@@ -34,7 +34,6 @@ export const forceUsers = [
     age: 52,
     isDark: false,
     lightsaberColors: ["blue"],
-    image:
-      "https://idsb.tmgrup.com.tr/ly/uploads/images/2021/11/14/159258.jpg"
+    image: "https://idsb.tmgrup.com.tr/ly/uploads/images/2021/11/14/159258.jpg"
   }
 ];

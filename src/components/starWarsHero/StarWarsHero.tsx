@@ -1,21 +1,29 @@
-// import styles from './StarWarsHeroes.module.css'
+import cn from 'classnames';
 import { v4 } from "uuid";
+import styles from './starWarsHeroes.module.css';
 
 // интерфейс описывающий объект props, который мы деструктуризируем в круглых скобках компонента и передаем из родителя (там где был вызван компонент)
 
 interface IStarWarsHeroProps {
-  name: string
-  age: number
-  image: string
-  lightsaberColors:string[]
+  name: string;
+  age: number;
+  image: string;
+  isDark: boolean;
+  lightsaberColors: string[];
 }
 
-const StarWarsHero = ({name, age, image, lightsaberColors}: IStarWarsHeroProps) => {
+const StarWarsHero = ({ name, age, image, lightsaberColors, isDark }: IStarWarsHeroProps) => {
   return (
-    <div >
+    <div className={cn(styles.heroCard, {
+      // styles.heroCard - применится в любом случае
+      // styles.darkStyle - применится, если isDark - true
+      [styles.darkStyle]: isDark
+    })}>
       <h4>{name}</h4>
       <p>Age: {age}</p>
-      <img src={image} width={200} alt="img" />
+      <div className={styles.imageWrapper}>
+        <img src={image} alt="img" />
+      </div>
       <p>
         Lightsaber colors:{" "}
         {lightsaberColors.map(el => (

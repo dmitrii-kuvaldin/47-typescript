@@ -10,6 +10,7 @@ const Header = () => {
         <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={'feedback'}>Feedback</NavLink>
         <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={'my-form'}>MyForm</NavLink>
         <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={'force-users'}>Force users</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={'gender-form'}>Gender form</NavLink>
       </header>
   );
 };

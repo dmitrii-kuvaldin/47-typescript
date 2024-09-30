@@ -10,6 +10,7 @@ const ForceUsers = () => {
       {forceUsers.map((hero, index) => (
         // либо воспользуйтесь сторонней библиотекой uuid
         <StarWarsHero
+          isDark={hero.isDark}
           key={v4()}
           age={hero.age}
           name={hero.name}
