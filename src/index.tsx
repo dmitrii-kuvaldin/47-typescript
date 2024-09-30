@@ -21,6 +21,7 @@ import Lesson10 from './lessons/lesson_10/Lesson10';
 import Lesson11 from './lessons/lesson_11/Lesson11';
 import Lesson12 from './lessons/lesson_12/Lesson12';
 import Lesson13 from './lessons/lesson_13/Lesson13';
+import ForceUsers from './components/forceUsers/ForceUsers';
 
 
 const root = ReactDOM.createRoot(
@@ -40,6 +41,7 @@ root.render(
         <Route element={<Counter />} path='counter' />
         <Route element={<MyForm />} path='my-form' />
         <Route element={<Feedback />} path='feedback' />
+        <Route element={<ForceUsers />} path='force-users' />
         <Route element={<Lesson01 />} path='lesson-1' />
         <Route element={<Lesson02 />} path='lesson-2' />
         <Route element={<Lesson03 />} path='lesson-3' />
