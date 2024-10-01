@@ -1,0 +1,13 @@
+.gridContainerProducts {
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 480px;
+  gap: 10px;
+}
+
+.shopContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
