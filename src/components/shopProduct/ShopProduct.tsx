@@ -3,7 +3,7 @@ import MyButton from '../myButton/MyButton';
 import styles from './shopProduct.module.css';
 
 interface IShopProductProps {
-  addProduct: (price: number) => void; 
+  addProduct: (price: number) => void;
   id: number;
   title: string;
   price: number;
@@ -23,7 +23,9 @@ const ShopProduct = ({ price, image, title, id, addProduct }: IShopProductProps)
     return str.length > 25 ? str.slice(0, 25) + '...' : str;
   };
 
-
+  const calculate = () => {
+    addProduct(price)
+  }
 
   return (
     <div className={styles.card}>
@@ -36,7 +38,7 @@ const ShopProduct = ({ price, image, title, id, addProduct }: IShopProductProps)
       <div>
         <Link to={String(id)}><MyButton isPrimary={true} text='more info' /></Link>
         {/* <button onClick={}>add product</button> */}
-        <MyButton onClick={addProduct} text='add product' price={price}/>
+        <MyButton onClick={calculate} text='add product' price={price}/>
       </div>
     </div>
   );
