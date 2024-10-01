@@ -18,6 +18,8 @@ const HomePage = () => {
         <Link to='lesson-11'><div>Lesson 11</div></Link>
         <Link to='lesson-12'><div>Lesson 12</div></Link>
         <Link to='lesson-13'><div>Lesson 13</div></Link>
+        <Link to='force-users'><div>Lesson 14</div></Link>
+        <Link to='shop'><div>Lesson 15</div></Link>
 
       </div>
     </div>

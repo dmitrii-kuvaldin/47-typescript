@@ -4,8 +4,6 @@ import './myForm.css'
 
 function MyForm() {
 
-
-
   return (
     <form className='myForm'>
       <MyInput name='login' label={'login'} placeholder={'login'} type={'text'} />
