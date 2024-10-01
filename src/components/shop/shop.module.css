@@ -10,4 +10,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.shopContainer form {
+  margin-bottom: 30px;
+}
+
+.error {
+  position: absolute;
+  color: red;
+  top: 90px;
 }

@@ -9,7 +9,7 @@ interface IFormValue {
   amount: string;
 }
 
-interface IProduct {
+export interface IProduct {
   id: number;
   title: string;
   price: number;
@@ -36,7 +36,7 @@ const schema = Yup.object().shape({
 const Shop = () => {
 
   const [products, setProducts] = useState<IProduct[]>([]);
-
+  const [finalPrice, setFinalPrice] = useState<number>(0)
 
   const getProducts = async (amount: string) => {
     const res = await fetch(`https://fakestoreapi.com/products?limit=${amount}`);
@@ -47,7 +47,7 @@ const Shop = () => {
 
   const formik = useFormik({
     initialValues: {
-      amount: '10'
+      amount: ''
     } as IFormValue,
     validationSchema: schema,
     validateOnChange: false,
@@ -63,6 +63,10 @@ const Shop = () => {
     setProducts([]);
   };
 
+  const addProduct = (price: number) => {
+    setFinalPrice(prev => prev + price)
+  }
+
   useEffect(()=> {
     getProducts('20')
   }, [])
@@ -71,15 +75,19 @@ const Shop = () => {
 
   return (
     <div className={styles.shopContainer}>
+      {formik.errors.amount &&
+
+      <p className={styles.error}>{formik.errors.amount}</p>
+      }
       <h2>Shop 🛒</h2>
       <form onSubmit={formik.handleSubmit}>
         <input onChange={formik.handleChange} value={formik.values.amount} name='amount' placeholder='amount of products' type="text" />
         <button onClick={handleClean} type="submit">show products</button>
       </form>
-      <p style={{ color: 'red' }}>{formik.errors.amount}</p>
+      <h4>FInal price: {Math.floor(finalPrice)}€</h4>
       <div className={styles.gridContainerProducts}>
         {products.map(product => (
-            <ShopProduct key={product.id} id={product.id} description={product.description} image={product.image} title={product.title} price={product.price}/>
+            <ShopProduct addProduct={addProduct} key={product.id} id={product.id} description={product.description} image={product.image} title={product.title} price={product.price}/>
         ))}
       </div>
     </div>

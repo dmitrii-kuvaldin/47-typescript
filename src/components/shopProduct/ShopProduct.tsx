@@ -3,6 +3,7 @@ import MyButton from '../myButton/MyButton';
 import styles from './shopProduct.module.css';
 
 interface IShopProductProps {
+  addProduct: (price: number) => void; 
   id: number;
   title: string;
   price: number;
@@ -15,12 +16,14 @@ interface IShopProductProps {
   };
 }
 
-const ShopProduct = ({ price, image, title, id }: IShopProductProps) => {
+const ShopProduct = ({ price, image, title, id, addProduct }: IShopProductProps) => {
 
   // эта функция обрезает строку если она больше 25 символов
   const shortTitle = (str: string) => {
-    return str.length > 25 ? str.slice(0, 25) + '...' : str
-  }
+    return str.length > 25 ? str.slice(0, 25) + '...' : str;
+  };
+
+
 
   return (
     <div className={styles.card}>
@@ -30,7 +33,11 @@ const ShopProduct = ({ price, image, title, id }: IShopProductProps) => {
         <img src={image} alt={title} />
       </div>
       {/* c помощью навигационного элемента Link мы дописываем в строку url id нужного продукта */}
-      <Link to={String(id)}><MyButton isPrimary={true} text='more info'/></Link>
+      <div>
+        <Link to={String(id)}><MyButton isPrimary={true} text='more info' /></Link>
+        {/* <button onClick={}>add product</button> */}
+        <MyButton onClick={addProduct} text='add product' price={price}/>
+      </div>
     </div>
   );
 };
