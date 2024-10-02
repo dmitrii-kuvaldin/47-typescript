@@ -4,18 +4,27 @@
   top: 0px;
   display: flex;
   padding: 10px 50px;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
   width: 100%;
   height: 80px;
   background-color: rgb(255, 148, 40);
 }
 
-.header > a {
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.header a, span {
   color: white;
   text-decoration: none;
 }
+
+.header span {
+  font-weight: bold;
+}
+
 
 .linkActive {
   /* !important - дает наивысший приоритет css свойству */
@@ -23,6 +32,6 @@
 }
 
 
-.header > a:hover {
+.header a:hover {
   text-decoration: underline;
 }

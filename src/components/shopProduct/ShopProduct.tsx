@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import MyButton from '../myButton/MyButton';
 import styles from './shopProduct.module.css';
+import { useCart } from '../../context/cartContext';
 
 interface IShopProductProps {
-  addProduct: (price: number) => void;
   id: number;
   title: string;
   price: number;
@@ -16,16 +16,22 @@ interface IShopProductProps {
   };
 }
 
-const ShopProduct = ({ price, image, title, id, addProduct }: IShopProductProps) => {
+const ShopProduct = ({ price, image, title, id }: IShopProductProps) => {
+
+  // ! забираем функцию добавления в из контекста
+  const { addToCart } = useCart();
 
   // эта функция обрезает строку если она больше 25 символов
   const shortTitle = (str: string) => {
     return str.length > 25 ? str.slice(0, 25) + '...' : str;
   };
 
-  const calculate = () => {
-    addProduct(price)
-  }
+  // ! создаем функцию добавления элементов в корзину на основе данных из контекста
+  const addToCartFromProduct = () => {
+    // addToCart ждет объект, который мы прописали и протипизировали в контексте - здесь мы собираем его по ключам и передаем
+    // если при создании объекта не указано значение, то это значит что используются переменные - и имя переменной станет ключом объекта (title) а значение это переменной станет значением объекта (Fjallraven - Foldsack No....)
+    addToCart({id, title, price, quantity: 1});
+  };
 
   return (
     <div className={styles.card}>
@@ -38,7 +44,7 @@ const ShopProduct = ({ price, image, title, id, addProduct }: IShopProductProps)
       <div>
         <Link to={String(id)}><MyButton isPrimary={true} text='more info' /></Link>
         {/* <button onClick={}>add product</button> */}
-        <MyButton onClick={calculate} text='add product' price={price}/>
+        <MyButton onClick={addToCartFromProduct} text='add product' price={price} />
       </div>
     </div>
   );
